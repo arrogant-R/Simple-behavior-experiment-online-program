@@ -1,0 +1,28 @@
+,name,age,sex,browser,ip,device,time
+0,,23.0,male,,,,
+1,,23.0,male,,,,
+2,lll,23.0,male,,,,
+3,www,23.0,male,,,,
+4,卞庭呈,24.0,male,,,,
+5,文昌 test,23.0,male,"Browser(family='Chrome Mobile WebView', version=(116, 0, 0), version_string='116.0.0')",172.26.28.200,,
+6,Deng Wenchang,23.0,male,"Browser(family='Edge', version=(125, 0, 0), version_string='125.0.0')",127.0.0.1,,
+7,,23.0,male,"Browser(family='Edge', version=(125, 0, 0), version_string='125.0.0')",127.0.0.1,computor,2024-05-28 12:50:34.229239
+8,mlq,23.0,male,"Browser(family='Edge', version=(125, 0, 0), version_string='125.0.0')",172.31.70.15,computor,2024-05-28 14:30:05.429659
+9,,23,male,"Browser(family='Chrome', version=(116, 0, 0), version_string='116.0.0')",172.31.70.115,computor,2024-05-29 15:50:50.413163
+10,李佳俊,23,male,"Browser(family='Chrome', version=(116, 0, 0), version_string='116.0.0')",172.26.117.68,computor,2024-05-29 15:56:21.314750
+11,李佳俊,23,male,"Browser(family='Chrome', version=(116, 0, 0), version_string='116.0.0')",172.26.117.68,computor,2024-05-29 20:12:33.803053
+12,,23,female,"Browser(family='Safari', version=(17, 5), version_string='17.5')",172.30.118.105,computor,2024-05-29 20:18:12.532942
+13,wjw,23,male,"Browser(family='Chrome', version=(125, 0, 0), version_string='125.0.0')",172.30.87.93,computor,2024-05-29 22:14:20.265339
+14,lxyhhh,23,male,"Browser(family='Chrome', version=(125, 0, 0), version_string='125.0.0')",172.30.87.135,computor,2024-05-29 22:19:08.687186
+15,mlq,23,male,"Browser(family='Edge', version=(123, 0, 0), version_string='123.0.0')",172.30.87.48,computor,2024-05-29 22:34:16.362624
+16,HWX,23,male,"Browser(family='Chrome', version=(120, 0, 0), version_string='120.0.0')",172.30.87.228,computor,2024-05-29 22:44:20.737498
+17,,23,male,"Browser(family='Edge', version=(116, 0, 1938), version_string='116.0.1938')",172.26.152.97,computor,2024-05-31 15:35:25.913135
+18,dwc,23,male,"Browser(family='Edge', version=(125, 0, 0), version_string='125.0.0')",172.31.70.104,computor,2024-06-02 14:01:00.422272
+19,wwwa,23,male,"Browser(family='Edge', version=(125, 0, 0), version_string='125.0.0')",172.31.70.110,computor,2024-06-02 16:36:22.248300
+20,卞庭呈,24,male,"Browser(family='Chrome', version=(116, 0, 0), version_string='116.0.0')",172.31.70.54,computor,2024-06-02 17:33:35.027556
+21,黄立宏,23,male,"Browser(family='Chrome', version=(124, 0, 0), version_string='124.0.0')",172.29.16.188,computor,2024-06-02 18:05:50.692821
+22,赵JH,23,male,"Browser(family='Chrome', version=(116, 0, 0), version_string='116.0.0')",172.29.20.17,computor,2024-06-03 16:29:46.735611
+23,zjy,22,male,"Browser(family='Edge', version=(125, 0, 0), version_string='125.0.0')",172.29.20.116,computor,2024-06-03 16:38:21.710168
+24,whz,23,male,"Browser(family='Chrome', version=(116, 0, 0), version_string='116.0.0')",172.29.20.187,computor,2024-06-03 16:51:30.070020
+25,,22,male,"Browser(family='Edge', version=(125, 0, 0), version_string='125.0.0')",172.30.97.125,computor,2024-06-03 17:01:17.898349
+26,黯岚,25,male,"Browser(family='Chrome', version=(125, 0, 0), version_string='125.0.0')",172.31.71.73,computor,2024-06-03 18:44:42.601724
