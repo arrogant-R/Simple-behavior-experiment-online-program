@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>focus</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/font/stylesheet.css" />
+    <script>
+        var startTime = new Date().getTime();
+        function getPosition(event) {
+            var image = document.getElementById('myImage');
+            var x = event.offsetX;
+            var y = event.offsetY;
+            var x_ratio = x / image.width;
+            var y_ratio = y / image.height;
+            var clickTime = new Date().getTime();
+            var elapsedTime = clickTime - startTime;
+            // var audio = document.getElementById('my_audio');
+            // audio.play()
+           
+            // 发送请求到Flask后端
+
+            fetch('/handle_click/{{id}}_{{n}}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 'x': x_ratio, 'y': y_ratio ,'T':elapsedTime})
+            }).then(response => response.json())
+            .then(data => {
+                if (data.right) {
+                    window.location.href = '/grouth_true/{{id}}_{{n}}_1';
+                }else{
+                    window.location.href = '/grouth_true/{{id}}_{{n}}_0'
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        function redirectAfterTimeout() {
+            // 设置一个定时器，3秒后执行跳转操作
+            setTimeout(function() {
+                fetch('/handle_click/{{id}}_{{n}}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 'x': 0, 'y': 0 ,'T':100000})
+            }).then(response => response.json())
+            .then(data => {
+                if (data.right) {
+                    window.location.href = '/grouth_true/{{id}}_{{n}}_1';
+                }else{
+                    window.location.href = '/grouth_true/{{id}}_{{n}}_0'
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            })
+            }, 10000000);
+        }
+        function redirectAfterButton() {
+            var clickTime = new Date().getTime();
+            var elapsedTime = clickTime - startTime;
+
+            fetch('/handle_click/{{id}}_{{n}}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 'x': -1, 'y': -1 ,'T':elapsedTime})
+            }).then(response => response.json())
+            .then(data => {
+                if (data.right) {
+                    window.location.href = '/grouth_true/{{id}}_{{n}}_1';
+                }else{
+                    window.location.href = '/grouth_true/{{id}}_{{n}}_0'
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</head>
+
+<style>
+  .center-both {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto; /* 0.8 * 100vw */
+    height: 70vh; /* 根据宽度自动调整高度以保持图片的纵横比 */
+    }
+   .bottom {
+    position: absolute;
+    bottom: 15%;
+    }
+</style>
+
+<body onload="redirectAfterTimeout()">
+<div >
+    <img src="{{image}}" class='center-both' id = "myImage" onclick="getPosition(event)"/>
+    <div class="bottom">
+        <input type="button" style="width: 200px; height: 55px; font-size: 22px;" class="submit" value="不存在" onclick="redirectAfterButton()"/>
+    </div>
+    
+ </div>
+</body>
+</html>

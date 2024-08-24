@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>focus</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/font/stylesheet.css" />
+    <script>
+       
+        function redirectAfterTimeout() {
+            // 设置一个定时器，3秒后执行跳转操作
+            setTimeout(function() {
+                window.location.href = "/sentence/{{id}}_{{n}}";
+            }, 1500);
+        }
+    </script>
+</head>
+
+<style>
+  .center-both {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+</style>
+
+
+<body onload="redirectAfterTimeout()">
+
+    <div class="center-both">
+    <img src="/images/focus.png" width=100px />
+ </div>
+</body>
+</html>

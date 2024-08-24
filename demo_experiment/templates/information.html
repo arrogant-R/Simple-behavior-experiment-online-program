@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>信息</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+   
+</head>
+<body>
+<form style="width: 400px; margin: 100px auto" method="post">
+    <div class="mb-3">
+        <label for="nametext" class="form-label">昵称（可选）</label>
+        <input type="text"
+               class="form-control"
+               id="nametext"
+               name="name"
+        >
+    </div>
+    <div class="mb-3">
+        <label for="agetext" class="form-label">年龄</label>
+        <input type="number"
+               class="form-control"
+               id="agetext"
+               name="age"
+               value=23
+        >
+    </div>
+
+    <div class="mb-3">
+        <label for="sextext" class="form-label">性别</label>
+        <select class="form-select" id="sextext" name="sex">
+            <option selected value="male">男</option>
+            <option value="female">女</option>
+          </select>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">提交并开始！</button>
+
+</form>
+</body>
+</html>

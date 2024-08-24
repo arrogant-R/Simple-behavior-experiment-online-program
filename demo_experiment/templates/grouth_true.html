@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>focus</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/font/stylesheet.css" />
+    <script>
+        var audio = document.getElementById("my_audio");
+        function play() {audio.play();};     
+        setTimeout(function(){
+            window.location.href = '/focus/{{id}}_{{n}}'; // 替换为您的目标页面URL
+        }, 1500);
+
+    </script>
+</head>
+
+<style>
+  .center-both {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto; /* 0.8 * 100vw */
+    height: 70vh; /* 根据宽度自动调整高度以保持图片的纵横比 */
+    }
+   .bottom {
+    position: absolute;
+    bottom: 15%;
+    }
+    @keyframes blink {
+    0% { border-color: yellow; border-width: 18px; }
+    50% { border-color: red; }
+    100% { border-color: transparent; }
+    }
+
+</style>
+
+<body onload="play()">
+<div >
+    <img src="{{image}}" class='center-both' id = "myImage"/>
+        <div class="bottom">
+        {% if no_target %}
+        <input type="button" style="width: 200px; height: 55px; font-size: 22px;  border-style: solid; border-width: 6px;animation: blink 2s linear infinite;" class="submit" value="不存在"/>
+        {% else %}
+        <input type="button" style="width: 200px; height: 55px; font-size: 22px;" class="submit" value="不存在"/>
+        {% endif %}
+    </div>
+    <!-- <audio src="/audio/right/great.mp3" style="display: none;" id="my_audio" autoplay="autoplay">
+        wufabofang
+    </audio> -->
+    <audio id="my_audio" controls="controls" autoplay="autoplay" hidden>
+        <source src="{{audio}}" type="audio/mp3" >
+    </audio>
+    {% if right %}
+        <img src="/images/win.png" style="position:absolute; top:40%;left: 10%; width:10vw;height: 22vh;">
+    {% else %}
+        <img src="/images/lose.png" style="position:absolute ;top:40%;left: 10%; width: 10vw;height:22vh;">
+    {% endif %}
+    </div>
+ </div>
+</body>
+</html>

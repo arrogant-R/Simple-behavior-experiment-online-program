@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>focus</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/font/stylesheet.css" />
+    <script>
+      var startTime = new Date().getTime(); 
+      function redirectAfterButton() {
+            var clickTime = new Date().getTime();
+            var elapsedTime = clickTime - startTime;
+
+            fetch('/handle_sent/{{id}}_{{n}}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 'x': -1, 'y': -1 ,'T':elapsedTime})
+            }).then(response => {
+                if (response.ok) {
+                    // 如果响应正常，重定向到另一个页面
+                    window.location.href = '/image/{{id}}_{{n}}';
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+            });
+        }
+      
+      function redirectAfterTimeout() {
+          // 设置一个定时器，3秒后执行跳转操作
+          setTimeout(function() {
+              window.location.href = "/image/{{id}}_{{n}}";
+          }, 1000000);
+      }
+    </script>
+   
+</head>
+<style>
+  .center-both {
+    font-size: xx-large;
+    line-height: 1.5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .bottom {
+    position: absolute;
+    bottom: 15%;
+    }
+</style>
+
+<body onload="redirectAfterTimeout()">
+ <div class='center-both'>
+   <p>{{sentence}}</p>
+   
+ </div>
+ <div class="bottom">
+    <input type="button" style="width: 200px; height: 55px; font-size: 22px;" class="submit" value="continue" onclick="redirectAfterButton()"/>
+  </div>
+</body>
+</html>

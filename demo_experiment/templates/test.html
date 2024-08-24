@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+          .centerClass
+          {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+          }
+    </style>
+</head>
+<body>
+    <div class="centerClass">
+        鼠标x位置:
+        <input type="text" id="x"></input>
+        <br>
+        鼠标y位置:
+        <input type="text" id="y"></input>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div>1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</div>
+    <script>
+   
+         document.onmousemove = mouseMove;
+         
+        function mouseMove(event)
+        {
+              var e = event || window.event;
+              var scrollx = document.documentElement.scrollLeft || document.body.scrollTop;
+              var scrolly= document.documentElement.scrollTop || document.body.scrollTop;
+              var x = e.pageX || e.clientX + scrollx;
+              var y = e.pageY || e.clientY + scrolly;
+              document.getElementById("x").value = x;
+              document.getElementById("y").value = y;
+              console.log(x);
+              console.log(y);
+        }
+ 
+    </script>
+</body>
+</html>
